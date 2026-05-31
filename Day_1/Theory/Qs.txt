@@ -1,0 +1,48 @@
+1. What are the advantages of Python over other programming languages?   
+
+*Simple and easy-to-read syntax 
+*Supports multiple programming paradigms (OOP, functional, procedural)
+*Large standard library available
+*Platform independent (runs on Windows, Linux, Mac, etc.)
+*Open-source and free to use
+*Faster development and fewer lines of code
+
+
+2. Explain the difference between Python 2 and Python 
+
+Feature	                              Python 2                            	Python 3
+
+Print Statement	      Treated as a statement (print "Hello")	          Treated as a function (print("Hello"))
+Integer Division	    Truncates results (5 / 2 = 2)	                    Returns a float (5 / 2 = 2.5)
+String Storage	      Stores strings as ASCII by default	              Stores strings as Unicode by default
+xrange Function	      Uses xrange() for efficient looping	              Replaced by native range() function
+Error Handling	      Uses comma syntax (except ValueError, e)	        Uses as keyword (except ValueError as e)
+Leaked Variables	    Loop variables leak into global scope	            Loop variables stay inside local scope
+
+
+
+3. What is the purpose of print() and dir() functions in Python? 
+
+The print() function is used to display output on the screen. It helps programmers show messages, variables, results and program outputs to the user.
+
+The dir() function is used to display the list of attributes, methods and functions available in an object or module. It helps programmers explore available features in Python.
+
+
+
+4. Explain the use of help() and dir() functions in the Python.  
+
+The help() function is used to get documentation and information about Python functions, modules, classes or keywords. It is useful for learning how a function works and its syntax.
+
+The dir() function shows all properties and methods associated with an object, module or class. It helps in understanding available operations and debugging programs.
+
+
+
+5. What is an IDE? Name any two Python IDEs and explain their importance. 
+
+An IDE (Integrated Development Environment) is software that provides tools for writing, editing, running and debugging programs in one place. It makes programming easier and faster by offering features like syntax highlighting, auto-completion and debugging tools.
+
+Two popular Python IDEs are:
+
+PyCharm – A powerful IDE used for professional Python development. It provides smart code completion, debugging, and project management tools.
+
+Jupyter Notebook – Commonly used in data science and machine learning. It allows users to write code, run it step-by-step, and display outputs like graphs and charts interactively.

@@ -1,0 +1,125 @@
+1. Variables and Memory Management
+Difference between Mutable and Immutable Data Types in Python
+
+In Python, mutable data types can be changed after creation, while immutable data types cannot be modified once created.
+Mutable Data Types: List, Dictionary, Set
+Immutable Data Types: Integer, Float, String, Tuple
+
+Memory Management in Python -
+Python manages memory automatically using:
+Reference counting – tracks the number of references to an object.
+Garbage collection – removes unused objects automatically.
+
+For immutable objects, Python may reuse memory for optimization. Mutable objects create flexible memory allocation because their contents can change dynamically.
+
+
+
+2. Data Types
+Comparison of List, Tuple, Set and Dictionary in Python -
+Feature  	        List	                  Tuple	          Set	                Dictionary
+
+Ordered	          Yes	                    Yes	            No	                Yes
+Mutable	          Yes	                    No	            Yes	                Yes
+Duplicate Values	Allowed	                Allowed	        Not Allowed	        Keys not duplicated
+Syntax	          [ ]	                    ( )	            { }	                {key:value}
+Access Method	    Index	                  Index	          No indexing	        Using keys
+Performance	      Slower	                Faster	        Fast searching	    Fast key lookup
+Use Case	        Dynamic collections	    Fixed data	    Unique items	      Key-value storage
+
+
+
+3. Type Conversion
+Difference between Implicit and Explicit Type Conversion
+
+Type conversion is the process of converting one data type into another.
+
+Implicit Type Conversion - 
+Implicit conversion happens automatically by Python when compatible data types are used together.
+Example:
+a = 5
+b = 2.5
+c = a + b
+print(c)   # 7.5
+Here, integer a is automatically converted into float.
+
+Explicit Type Conversion -
+Explicit conversion is performed manually using functions like int(), float(), and str().
+Example:
+x = "10"
+y = int(x)
+print(y + 5)
+Explicit conversion gives more control over data handling and avoids unexpected results.
+
+
+
+4. Operators 
+Difference between == and is Operator in Python.
+
+The '==' operator checks whether two objects have equal values, while the 'is' operator checks whether two variables refer to the same memory location.
+
+Example:
+a = [1,2]
+b = [1,2]
+print(a == b)   # True
+print(a is b)   # False
+
+Here, both lists contain the same values, so == returns True.
+But they are stored at different memory locations, so is returns False.
+
+When 'is' Produces Incorrect Results ?
+Using 'is' instead of == can produce incorrect results when comparing values rather than object identities.
+
+Example:
+x = [1,2,3]
+y = [1,2,3]
+print(x is y)   # False
+Even though both lists contain the same data, is returns False because they are different objects in memory.
+
+
+
+5. Strings
+Advantages of String Immutability in Python
+
+Python strings are immutable, meaning their contents cannot be changed after creation.
+
+Advantages -
+* Provides better security because data cannot be modified accidentally.
+* Allows memory optimization through string sharing and interning.
+* Makes strings hashable, so they can be used as dictionary keys.
+* Improves program stability and reliability.
+
+Effect on Memory Optimization -
+Python reuses immutable string objects with the same value, reducing memory usage and improving performance.
+
+Effect on Program Security-
+Immutability prevents accidental modification of important data, making programs safer and more predictable.
+
+
+
+6. Built-in Functions
+
+Working of map(), filter() and reduce() -
+
+map()- Applies a function to every element in an iterable.
+Example:
+nums = [1,2,3]
+result = list(map(lambda x: x*2, nums))
+
+filter()- Selects elements that satisfy a condition.
+Example:
+nums = [1,2,3,4]
+result = list(filter(lambda x: x%2==0, nums))
+
+reduce()- Reduces all elements into a single value.
+Example:
+from functools import reduce
+result = reduce(lambda x,y: x+y, [1,2,3,4])
+
+Comparison with List Comprehension - 
+Feature	          map/filter/reduce	                        List Comprehension
+
+Readability	      Less readable sometimes	                  More readable
+Performance	      Efficient for functional programming	    Fast and concise
+Practical         Usage	Useful with existing functions	    Commonly preferred in Python
+
+List comprehensions are generally preferred for readability and simplicity, while map(), filter() and reduce() are useful in functional programming tasks.
