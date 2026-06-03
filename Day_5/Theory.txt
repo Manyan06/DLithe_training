@@ -1,0 +1,234 @@
+1. Classes and Objects
+
+A class is a blueprint or template used to create objects. It defines the attributes (data) and methods (functions) that objects will have.
+
+An object is an instance of a class. It represents a real entity with actual values.
+
+Difference Between Class and Object :
+    Class	                              Object
+Blueprint/template	              Instance of class
+Logical entity	                  Physical entity
+Defines properties and behavior	  Contains actual data
+Created using class keyword	      Created by calling class
+
+
+Creating Objects -
+Objects are created by calling the class name.
+
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+car1 = Car("Toyota", "Red")
+
+Here:
+Car → class
+car1 → object
+
+Real-World Example
+A class is like a building plan, while objects are the actual houses built from that plan.
+
+
+
+
+2. Constructors (__init__)
+
+A constructor is a special method that automatically executes when an object is created.
+
+In Python, the constructor method is:
+__init__()
+
+Purpose of __init__() :
+*Initializes object attributes
+*Assigns values to instance variables
+*Performs automatic setup for objects
+
+
+Syntax -
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+Object Creation - 
+s1 = Student("Rahul", 20)
+
+Explanation -
+self.name = name stores the passed value
+self refers to the current object
+Constructor runs automatically during object creation
+
+
+Advantages -
+*Automatic initialization
+*Reduces repetitive code
+*Ensures every object starts with proper values
+
+
+
+3. Inheritance
+
+Inheritance is an OOP feature where one class acquires the properties and methods of another class.
+
+Parent class → Base/Super class
+Child class → Derived/Sub class
+
+Syntax -
+class Animal:
+    def sound(self):
+        print("Animal makes sound")
+
+class Dog(Animal):
+    pass
+
+Here, Dog inherits from Animal.
+
+Advantages of Inheritance -
+*Code Reusability :
+Existing code can be reused without rewriting.
+*Reduced Redundancy :
+Common methods are written once in parent class.
+*Easy Maintenance :
+Changes in parent class affect child classes automatically.
+*Extensibility :
+New features can be added in child classes.
+
+
+Example -
+class Vehicle:
+    def start(self):
+        print("Vehicle started")
+
+class Bike(Vehicle):
+    def ride(self):
+        print("Bike is riding")
+
+Bike can use start() without redefining it.
+
+
+
+
+4. Method Overriding -
+Method overriding occurs when a child class provides its own implementation of a method already defined in the 
+parent class.
+
+The child class method replaces the parent class method behavior.
+
+Example -
+class Animal:
+    def sound(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+
+Object Calls - 
+d = Dog()
+d.sound()
+
+Output :
+Dog barks
+
+Explanation - 
+Parent class method sound() is overridden in child class.
+Python calls the child class version first.
+
+Advantages - 
+*Achieves runtime polymorphism
+*Allows specialized behavior
+*Improves flexibility
+
+
+
+5. Encapsulation
+
+Encapsulation is the process of wrapping data and methods together into a single unit (class) and restricting direct access to data.
+
+It helps in data hiding and security.
+
+Types of Members in Python -
+Type	      Syntax	        Accessibility
+Public	     name	        Accessible everywhere
+Protected	  _name	        Accessible within class and subclasses
+Private	    __name	      Accessible only inside class
+
+
+Public Members - 
+class Student:
+    def __init__(self):
+        self.name = "Rahul"
+
+Accessible anywhere:
+
+s = Student()
+print(s.name)
+
+Protected Members -
+class Student:
+    def __init__(self):
+        self._marks = 90
+
+Protected members should not be accessed directly outside the class.
+
+Private Members - 
+class Student:
+    def __init__(self):
+        self.__salary = 50000
+
+Accessing directly gives error:
+
+print(obj.__salary)
+
+Can be accessed using name mangling:
+
+print(obj._Student__salary)
+
+Advantages of Encapsulation -
+*Data security
+*Prevents accidental modification
+*Better control over data
+*Improves maintainability
+
+
+
+6. Polymorphism
+
+Polymorphism means “many forms”.
+
+In Python, the same method name can perform different actions depending on the object calling it.
+
+Example -
+class Cat:
+    def sound(self):
+        print("Cat meows")
+
+class Dog:
+    def sound(self):
+        print("Dog barks")
+
+
+Using Polymorphism -
+animals = [Cat(), Dog()]
+for a in animals:
+    a.sound()
+
+Output -
+Cat meows
+Dog barks
+
+Explanation -
+Both classes have the same method name sound(), but behavior changes based on the object.
+
+Types of Polymorphism in Python -
+1. Method Overriding
+2. Operator Overloading
+3. Duck Typing
+
+Advantages :
+*Flexibility
+*Code reusability
+*Easy extension of programs
+*Cleaner code structure
