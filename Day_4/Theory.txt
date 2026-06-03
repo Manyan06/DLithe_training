@@ -1,0 +1,221 @@
+QUESTIONS -
+
+1. Lists vs Tuples
+What are the key differences between Python lists and tuples? In which situations would you prefer a tuple over a list?
+
+2. Dictionary Operations
+Explain how dictionaries store data in Python. What are the advantages of using dictionaries compared to lists for searching and retrieving values?
+
+3. Sets and Their Applications
+What are sets in Python, and how do they differ from lists? Explain how sets can be used to remove duplicate elements from a collection.
+
+4. List Comprehensions
+What is a list comprehension? How does it improve code readability and performance compared to traditional for loops?
+
+5. Using enumerate()
+What is the purpose of the enumerate() function in Python? How does it help when iterating through a sequence?
+
+6. Using zip()
+Explain the functionality of the zip() function. What happens when the iterables passed to zip() have different lengths?
+
+7. Combining Data Structures
+A program stores student names in a list and their marks in another list. Explain how the zip() function and a dictionary can be used together to create a student-result mapping.
+
+
+
+ANSWERS - 
+
+
+1. Lists vs Tuples
+
+Python provides two important sequence data types: lists and tuples.
+
+Lists	                                Tuples
+Mutable (can be modified)	          Immutable (cannot be modified)
+Defined using []	                  Defined using ()
+Slower due to mutability	          Faster and memory efficient
+Supports adding/removing elements	  Fixed after creation
+
+Example -
+my_list = [1, 2, 3]
+my_tuple = (1, 2, 3)
+
+my_list[0] = 10      # Allowed
+# my_tuple[0] = 10   # Error
+
+
+Tuples are preferred when:
+*Data should not change.
+*Faster performance is needed.
+*Using values as dictionary keys.
+*Representing fixed records like coordinates.
+*Returning multiple values from functions.
+
+
+
+2. Dictionary Operations
+
+A dictionary stores data as key–value pairs using a hash table internally.
+
+Syntax -
+student = {
+    "name": "Rahul",
+    "marks": 90
+}
+
+Here:
+"name" and "marks" are keys.
+"Rahul" and 90 are values.
+
+Advantages of Dictionaries over Lists -
+1. Fast Searching
+Dictionaries provide near constant-time lookup using keys.
+2. Efficient Retrieval
+No need to search element by element.
+3. Unique Keys
+Prevents duplicate keys.
+4. Better Data Organization
+Stores related information together.
+
+Example :
+student["marks"]
+
+Output:
+90
+
+
+
+3. Sets and Their Applications
+
+A set is an unordered collection of unique elements.
+Syntax -
+s = {1, 2, 3}
+
+Difference Between Sets and Lists -
+List	                  Set
+Ordered	              Unordered
+Allows duplicates	    No duplicates
+Uses indexing	        No indexing
+Defined using []	    Defined using {}
+
+Removing Duplicates Using Set -
+numbers = [1, 2, 2, 3, 4, 4]
+unique_numbers = set(numbers)
+print(unique_numbers)
+
+Output:
+{1, 2, 3, 4}
+
+Applications of Sets -
+*Removing duplicates
+*Membership testing
+*Mathematical set operations like union and intersection
+
+
+
+4. List Comprehensions
+
+A list comprehension is a compact way to create lists in Python.
+
+Syntax -
+[expression for item in iterable]
+
+Example -
+squares = [x*x for x in range(5)]
+print(squares)
+
+Output:
+[0, 1, 4, 9, 16]
+
+Advantages over Traditional Loops -
+*Shorter Code -
+Reduces multiple lines into one line.
+*Better Readability -
+Easier to understand.
+*Improved Performance -
+Faster execution in many cases.
+
+Traditional Loop Equivalent -
+squares = []
+for x in range(5):
+    squares.append(x*x)
+
+
+
+5. Using enumerate()
+
+The enumerate() function adds an index to each element while iterating through a sequence.
+Syntax -
+enumerate(iterable, start=0)
+
+Example -
+fruits = ["apple", "banana", "mango"]
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+
+Output:
+0 apple
+1 banana
+2 mango
+
+Advantages:
+*Provides both index and value together.
+*Eliminates manual counter variables.
+*Makes loops cleaner and readable.
+
+
+
+6. Using zip()
+
+The zip() function combines multiple iterables element-wise.
+Syntax -
+zip(iterable1, iterable2)
+
+Example -
+names = ["A", "B", "C"]
+marks = [80, 90, 85]
+result = list(zip(names, marks))
+print(result)
+
+Output:
+[('A', 80), ('B', 90), ('C', 85)]
+
+
+Different Length Iterables -
+If iterables have different lengths, zip() stops at the shortest iterable.
+
+Example
+a = [1, 2, 3]
+b = ['x', 'y']
+print(list(zip(a, b)))
+
+Output:
+[(1, 'x'), (2, 'y')]
+
+
+
+7. Combining Data Structures
+
+The zip() function and dictionaries can be used together to map student names with marks.
+Example -
+students = ["Rahul", "Anu", "Kiran"]
+marks = [85, 90, 78]
+result = dict(zip(students, marks))
+print(result)
+
+Output:
+{
+    'Rahul': 85,
+    'Anu': 90,
+    'Kiran': 78
+}
+
+Explanation -
+zip() combines corresponding elements from both lists.
+dict() converts the paired values into a dictionary.
+Student names become keys and marks become values.
+
+Advantages -
+*Easy student-result mapping.
+*Fast retrieval using student names.
+*Organized storage of related data.
