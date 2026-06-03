@@ -1,1 +1,247 @@
- 
+ QUESTIONS-
+
+1. Function Definition and Execution:
+What is the difference between defining and calling a function in Python?
+
+2. Parameters and Arguments:
+Differentiate between positional, keyword, default, and variable-length arguments.
+
+3. Return Values:
+What happens if a function does not use a return statement? How can a function return multiple values?
+
+4. Variable Scope:
+Explain the LEGB rule used for variable lookup in Python.
+
+5. Global and Nonlocal Keywords:
+What is the difference between the global and nonlocal keywords?
+
+6. Recursive Functions:
+What is recursion, and why can excessive recursion cause a RecursionError?
+
+7. Recursion vs Iteration:
+Compare recursion and iteration in terms of readability, memory usage, and performance.
+
+
+
+ANSWERS -
+
+
+1. Function Definition and Execution
+
+What is the difference between defining and calling a function in Python?
+
+Function Definition - 
+*Defining a function means creating a function using the def keyword.
+*It contains the block of code or logic to perform a task.
+*The function does not execute when defined.
+
+Syntax -
+def greet():
+    print("Hello")
+
+Function Calling -
+*Calling a function means executing the defined function.
+*The function runs only when it is called.
+
+Example -
+greet()
+
+Difference - 
+Function Definition-	    Function Calling-
+Creates the function	  Executes the function
+Uses def keyword	      Uses function name with parentheses
+Stores logic	          Produces output/result
+
+
+
+2. Parameters and Arguments
+
+Differentiate between positional, keyword, default, and variable-length arguments.
+
+Positional Arguments -
+Values are assigned according to their position.
+
+def add(a, b):
+    print(a + b)
+add(2, 3)
+
+Keyword Arguments -
+Arguments are passed using parameter names.
+
+def student(name, age):
+    print(name, age)
+student(age=20, name="Ram")
+
+Default Arguments-
+Parameters are assigned default values.
+def greet(name="Guest"):
+    print("Hello", name)
+greet()
+greet("Anu")
+
+Variable-Length Arguments-
+Used when the number of arguments is unknown.
+*args
+Accepts multiple positional arguments.
+
+def total(*numbers):
+    print(sum(numbers))
+total(1, 2, 3, 4)
+
+**kwargs
+Accepts multiple keyword arguments.
+
+def details(**data):
+    print(data)
+details(name="Sam", age=21)
+
+
+
+3. Return Values -
+
+What happens if a function does not use a return statement? How can a function return multiple values?
+
+Without return
+If a function does not contain a return statement, Python automatically returns None.
+
+Example -
+def show():
+    print("Hello")
+x = show()
+print(x)
+
+Output -
+Hello
+None
+
+Returning Multiple Values -
+A function can return multiple values separated by commas.
+Python stores them as a tuple.
+
+Example
+def calc(a, b):
+    return a+b, a-b
+sum1, diff = calc(10, 5)
+print(sum1)
+print(diff)
+
+
+
+4. Variable Scope
+Explain the LEGB rule used for variable lookup in Python.
+
+LEGB represents the order in which Python searches for variables.
+
+LEGB Rule -
+
+L	Local Scope
+E	Enclosing Scope
+G	Global Scope
+B	Built-in Scope
+
+Python searches variables in the following order:
+1. Local
+2. Enclosing
+3. Global
+4. Built-in
+
+Example
+x = "Global"
+
+def outer():
+    x = "Enclosing"
+
+    def inner():
+        x = "Local"
+        print(x)
+
+    inner()
+outer()
+
+Output -
+Local
+
+
+
+5. Global and Nonlocal Keywords
+What is the difference between the global and nonlocal keywords?
+
+Keyword	      Purpose
+global	    Refers to variables declared outside all functions
+nonlocal	  Refers to variables in the enclosing function
+
+Example of global -
+x = 10
+def change():
+    global x
+    x = 20
+change()
+print(x)
+
+Output-
+20
+
+Example of nonlocal -
+def outer():
+    x = 5
+    def inner():
+        nonlocal x
+        x = 10
+    inner()
+    print(x)
+outer()
+
+Output-
+10
+
+
+
+6. Recursive Functions
+What is recursion, and why can excessive recursion cause a RecursionError?
+
+Recursion -
+Recursion is a process in which a function calls itself repeatedly until a stopping condition is met.
+Example
+def fact(n):
+    if n == 1:
+        return 1
+    return n * fact(n-1)
+print(fact(5))
+
+RecursionError -
+Excessive recursion happens when the function keeps calling itself without reaching a base condition.
+
+Python limits recursive calls to avoid stack overflow.
+Example -
+def test():
+    test()
+test()
+
+Output - 
+RecursionError: maximum recursion depth exceeded
+
+
+
+7. Recursion vs Iteration
+Compare recursion and iteration in terms of readability, memory usage, and performance.
+
+Feature	          Recursion	                       Iteration
+Technique	        Function calls itself	          Uses loops
+Readability	      Better for complex problems	    Easier for simple loops
+Memory Usage	    Uses more memory	              Uses less memory
+Performance	      Slower	                        Faster
+Risk	            May cause RecursionError	      No recursion limit
+
+
+Recursive Example -
+def fact(n):
+    if n == 1:
+        return 1
+    return n * fact(n-1)
+
+Iterative Example -
+def fact(n):
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
