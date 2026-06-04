@@ -1,0 +1,303 @@
+QUESTIONS -
+
+1. Try–Except–Finally
+Explain the role of the finally block in Python’s exception handling. Why is it important, and when does it execute?
+
+2. Exception Hierarchy
+Describe how Python’s built-in exceptions are organized. Why is it recommended to catch specific exceptions rather than using a generic except: clause?
+
+3. Custom Exceptions
+What are the advantages of creating custom exception classes in Python instead of relying only on built-in exceptions?
+
+4. Assertions
+Discuss the purpose of assertions in Python. In what scenarios are they useful, and why should they not be used for handling runtime errors in production code?
+
+5. Logging Basics
+What is the difference between logging.DEBUG, logging.INFO, logging.WARNING, logging.ERROR, and logging.CRITICAL levels? Provide an example scenario for each.
+
+6. Logging vs. Print Statements
+Why is logging preferred over using print() statements for debugging and monitoring applications?
+
+
+
+ANSWERS - 
+
+1. Try–Except–Finally
+
+The finally block in Python is used to execute code that must run regardless of whether an exception occurs or not.
+
+It is mainly used for cleanup operations such as:
+Closing files
+Releasing resources
+Closing database connections
+Releasing locks
+
+The finally block executes after the try and except blocks.
+
+Syntax - 
+try:
+    # risky code
+except Exception:
+    # handle exception
+finally:
+    # cleanup code
+
+Importance -
+Ensures important cleanup tasks are always performed
+Prevents resource leaks
+Improves reliability and stability of programs
+
+When does it execute?
+The finally block always executes:
+
+When no exception occurs
+When an exception is handled
+When an exception is unhandled
+Even if return, break, or continue statements are used
+
+Example -
+try:
+    file = open("data.txt")
+    content = file.read()
+except FileNotFoundError:
+    print("File not found")
+finally:
+    print("Closing file")
+    file.close()
+
+
+
+2. Exception Hierarchy
+
+Python organizes built-in exceptions in a hierarchical structure based on inheritance.
+The root class for all exceptions is:
+BaseException
+
+Under it are major exception classes such as:
+1. SystemExit
+2. KeyboardInterrupt
+3. Exception
+
+Most common application errors inherit from Exception.
+
+Example Hierarchy -
+BaseException
+ ├── SystemExit
+ ├── KeyboardInterrupt
+ └── Exception
+      ├── ArithmeticError
+      │     └── ZeroDivisionError
+      ├── ValueError
+      ├── TypeError
+      ├── IndexError
+      └── FileNotFoundError
+
+
+Why catch specific exceptions?
+Catching specific exceptions is recommended because:
+
+Improves debugging
+Avoids hiding bugs
+Makes code safer
+Improves readability
+
+Bad Practice -
+try:
+    x = 10 / 0
+except:
+    print("Error occurred")
+
+Good Practice -
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+
+
+3. Custom Exceptions
+
+Custom exceptions are user-defined exception classes created for application-specific errors.
+They are usually derived from the Exception class.
+
+Example -
+class InvalidAgeError(Exception):
+    pass
+age = -5
+
+if age < 0:
+    raise InvalidAgeError("Age cannot be negative")
+
+
+Advantages of Custom Exceptions -
+
+1. Better Error Classification
+They represent specific application errors clearly.
+
+Example:
+PaymentFailedError
+InvalidUserError
+NetworkTimeoutError
+
+2. Improves Readability
+The exception name itself explains the problem.
+
+3. Easier Debugging
+Developers can quickly identify the source of the issue.
+
+4. Allows Specific Handling
+Different custom exceptions can be handled separately.
+except InvalidAgeError:
+    print("Enter valid age")
+
+5. Makes Large Applications Organized
+Useful in large systems where many error types exist.
+
+6. Supports Maintainability
+Code becomes modular and easier to maintain.
+
+
+
+4. Assertions
+Assertions are debugging tools used to test assumptions in a program.
+They verify whether a condition is true during execution.
+
+Syntax -
+assert condition, "Error message"
+If the condition is false, Python raises an AssertionError.
+
+Example - 
+x = -5
+assert x > 0, "x must be positive"
+
+Purpose of Assertions -
+Detect programming mistakes early
+Validate assumptions during development
+Help in debugging
+
+Useful Scenarios :
+1. Checking Preconditions
+assert age >= 0
+2. Verifying Function Outputs
+assert result != None
+3. Testing Internal Logic
+assert len(items) > 0
+4. Debugging Complex Programs
+
+Used during development to catch unexpected states.
+
+Why assertions should not be used in production for runtime errors -
+1. Assertions can be disabled using optimization mode:
+2. They are meant for debugging, not user input validation
+3. Runtime errors should use proper exception handling
+
+Wrong Usage -
+assert password == "admin"
+
+Correct Usage -
+if password != "admin":
+    raise ValueError("Invalid password")
+
+
+
+5. Logging Basics
+Python logging levels indicate the severity of events.
+
+Logging Level	           Purpose	                                    Example Scenario
+DEBUG	               Detailed diagnostic information	             Variable values during execution
+INFO	               General application events	                   User logged into system
+WARNING	             Possible issue but program still works	       Disk space running low
+ERROR	               Serious problem affecting operation	         Database connection failed
+CRITICAL	           Very severe error causing program failure	   Entire server crashed
+
+
+1. DEBUG
+
+Used for detailed debugging information.
+logging.debug("Value of x is %d", x)
+
+Scenario:
+Tracking variable values during development
+
+2. INFO
+
+Confirms normal program operation.
+logging.info("User logged in")
+
+Scenario:
+Application startup or successful transactions
+
+3. WARNING
+
+Indicates unexpected situations that are not fatal.
+logging.warning("Memory usage is high")
+
+Scenario:
+Deprecated API usage
+
+4. ERROR
+
+Used when an operation fails.
+logging.error("File could not be opened")
+
+Scenario:
+Failed database query
+
+5. CRITICAL
+
+Represents severe failures.
+logging.critical("System shutdown due to failure")
+
+Scenario:
+Application crash or data corruption
+
+
+
+
+6. Logging vs. Print Statements
+
+Logging is preferred over print() because it provides better control, flexibility, and monitoring capabilities.
+
+Logging	                        Print
+Supports severity levels	    No severity levels
+Can save logs to files	      Only displays output
+Easier debugging	            Difficult in large applications
+Configurable	                Not configurable
+Includes timestamps	          No timestamps
+Suitable for production	      Mainly for simple testing
+
+
+Advantages of Logging -
+
+1. Severity Levels
+Different types of messages can be categorized.
+logging.error("Database failed")
+
+2. Log Storage
+Logs can be stored in files.
+logging.basicConfig(filename='app.log')
+
+3. Better Debugging
+Helps trace issues systematically.
+
+4. Timestamps and Metadata
+Logging automatically records:
+Time
+Severity
+Module information
+
+5. Can Disable Certain Messages
+
+Example:
+logging.basicConfig(level=logging.WARNING)
+Only warnings and above are shown.
+
+6. Suitable for Large Applications
+
+Professional applications rely on logging systems for monitoring and maintenance.
+
+Example -
+import logging
+logging.basicConfig(level=logging.INFO)
+logging.info("Application started")
+logging.error("Unable to connect to database")
