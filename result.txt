@@ -1,0 +1,3 @@
+Name: Manya
+Marks: 89
+Result: Pass
