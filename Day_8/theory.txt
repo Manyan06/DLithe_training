@@ -1,0 +1,234 @@
+QUESTIONS - 
+
+1. What is the difference between opening a file in read mode("r),write mode("w), append mode("a"), and read-write mode("r+") in Python? Explain with examples.
+2. How can you read the contents of a text file in Python? Explain the use of the read(), readline() and readlines() methods.
+3. What is a CSV file? Describe how Python's csv module can be used to read data from and write data to a CSV file.
+4. What is JSON and why is it commonly used for data exchange? Explain the purpose of the json.dump() and json.load() methods.
+5. What is a module in Python? Explain how modules help in code reusability and provide examples of built-in modules.
+6. Differentiate between a module and a package in Python. How is a package organized, and what is the role of the __init__.py file?
+
+
+
+ANSWERS -
+1. Difference between Read ("r"), Write ("w"), Append ("a"), and Read-Write ("r+") Modes in Python
+
+Python uses different file modes for different operations while handling files.
+
+Mode	        Purpose	      File Must Exist?	 Existing Data
+"r"	          Read file	          Yes	         Remains unchanged
+"w"	          Write file	        No	         Old data erased
+"a"	          Append data	        No	         Old data preserved
+"r+"	        Read and write	   Yes	         Old data preserved
+
+Read Mode ("r") -
+Opens file only for reading.
+Error occurs if file does not exist.
+file = open("sample.txt", "r")
+print(file.read())
+file.close()
+
+Write Mode ("w") -
+Opens file for writing.
+Creates file if not present.
+Deletes existing content.
+file = open("sample.txt", "w")
+file.write("Hello Python")
+file.close()
+
+Append Mode ("a") -
+Adds data at the end of file.
+Existing data remains safe.
+file = open("sample.txt", "a")
+file.write("\nNew Line")
+file.close()
+
+Read-Write Mode ("r+") -
+Allows both reading and writing.
+File must already exist.
+file = open("sample.txt", "r+")
+print(file.read())
+file.write(" Added Text")
+file.close()
+
+
+
+2. Reading Contents of a Text File in Python
+Python provides different methods to read data from files.
+Assume sample.txt contains:
+Hello
+Welcome
+Python
+read()
+
+Reads entire file content.
+file = open("sample.txt", "r")
+data = file.read()
+print(data)
+file.close()
+
+Output -
+Hello
+Welcome
+Python
+readline()
+
+Reads one line at a time :
+file = open("sample.txt", "r")
+print(file.readline())
+print(file.readline())
+file.close()
+Output
+Hello
+Welcome
+readlines()
+
+Reads all lines and stores them in a list:
+file = open("sample.txt", "r")
+data = file.readlines()
+print(data)
+file.close()
+Output
+['Hello\n', 'Welcome\n', 'Python']
+
+
+
+3. What is a CSV File? Explain Python csv Module
+
+CSV stands for Comma Separated Values -
+Used to store tabular data.
+Each row is stored in a new line.
+Values are separated using commas.
+
+Example CSV File -
+Name,Age,City
+Ram,21,Mysore
+Anu,20,Bangalore
+
+Reading a CSV File -
+Python provides a built-in csv module.
+
+import csv
+file = open("data.csv", "r")
+reader = csv.reader(file)
+for row in reader:
+    print(row)
+file.close()
+
+Output -
+['Name', 'Age', 'City']
+['Ram', '21', 'Mysore']
+['Anu', '20', 'Bangalore']
+
+Writing to a CSV File -
+import csv
+file = open("data.csv", "w", newline='')
+writer = csv.writer(file)
+writer.writerow(["Name", "Age", "City"])
+writer.writerow(["Ram", 21, "Mysore"])
+file.close()
+
+
+
+4. What is JSON? Explain json.dump() and json.load()
+
+JSON stands for JavaScript Object Notation.
+Lightweight data exchange format.
+Commonly used in APIs and web applications.
+Easy for humans and machines to read.
+
+Example JSON -
+{
+  "name": "Ram",
+  "age": 21
+}
+
+json.dump() -
+Used to write Python objects into a JSON file.
+
+import json
+data = {"name": "Ram", "age": 21}
+file = open("data.json", "w")
+json.dump(data, file)
+file.close()
+
+json.load() -
+Used to read JSON data from a file into a Python object.
+
+import json
+file = open("data.json", "r")
+data = json.load(file)
+print(data)
+file.close()
+
+Output -
+{'name': 'Ram', 'age': 21}
+
+
+
+5. What is a Module in Python?
+A module is a Python file containing functions, variables, or classes that can be reused in another program.
+
+Advantages of Modules -
+Code reusability
+Better program organization
+Easy maintenance
+Reduces code duplication
+
+Example of User-Defined Module -
+mymodule.py
+def greet():
+    print("Hello")
+
+Main Program -
+import mymodule
+mymodule.greet()
+
+Built-in Modules in Python -
+Module	              Purpose
+math	            Mathematical operations
+random	          Random number generation
+os	              Operating system operations
+datetime	        Date and time handling
+csv	              CSV file handling
+
+Example Using math Module -
+import math
+print(math.sqrt(25))
+
+Output -
+5.0
+
+
+
+6. Difference Between Module and Package in Python
+Module	                          Package
+Single Python file	          Collection of modules
+Contains functions/classes	  Contains multiple modules
+Smaller unit	                Larger project structure
+Example: math.py	            Example: numpy
+Package Organization
+
+Example structure:
+
+mypackage/
+│
+├── __init__.py
+├── module1.py
+├── module2.py
+
+Role of __init__.py -
+Makes the directory a Python package.
+Initializes the package.
+Can contain package-level code.
+
+Example -
+module1.py
+def add(a, b):
+    return a + b
+
+main.py
+from mypackage import module1
+print(module1.add(2,3))
+
+Output -
+5
