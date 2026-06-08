@@ -1,234 +1,206 @@
-QUESTIONS - 
+QUESTIONS -
 
-1. What is the difference between opening a file in read mode("r),write mode("w), append mode("a"), and read-write mode("r+") in Python? Explain with examples.
-2. How can you read the contents of a text file in Python? Explain the use of the read(), readline() and readlines() methods.
-3. What is a CSV file? Describe how Python's csv module can be used to read data from and write data to a CSV file.
-4. What is JSON and why is it commonly used for data exchange? Explain the purpose of the json.dump() and json.load() methods.
-5. What is a module in Python? Explain how modules help in code reusability and provide examples of built-in modules.
-6. Differentiate between a module and a package in Python. How is a package organized, and what is the role of the __init__.py file?
-
-
+1. What is Backtracking? Explain the concept of backtracking and describe how it is used to solve complex problems.
+2. What are the main steps involved in a Backtracking algorithm? Explain the process of making choices, checking constraints and backtracking when a solution is not feasible.
+3. Explain the N-Queens Problem. How does the backtracking technique help in finding a valid arrangement of queens on a chessboard?
+4. What is a Trie Data Structure? Describe the structure of a Trie and explain how it stores strings efficiently.
+5. Explain the basic operations of a Trie. Discuss the insertion, search and prefix search operations with suitable examples.
+6. What are the advantages and applications of Trie Data Structures? List and explain any four real-world applications of Tries.
+7. How can Backtracking and Trie be combined to solve problems? Explain with an example such as Word Search, Boggle Game or Autocomplete Systems.
 
 ANSWERS -
-1. Difference between Read ("r"), Write ("w"), Append ("a"), and Read-Write ("r+") Modes in Python
 
-Python uses different file modes for different operations while handling files.
+1. What is Backtracking? Explain the concept of backtracking and describe how it is used to solve complex problems.
 
-Mode	        Purpose	      File Must Exist?	 Existing Data
-"r"	          Read file	          Yes	         Remains unchanged
-"w"	          Write file	        No	         Old data erased
-"a"	          Append data	        No	         Old data preserved
-"r+"	        Read and write	   Yes	         Old data preserved
+Backtracking is an algorithmic technique used to solve problems by trying different possible solutions step by step. It follows the idea of building a solution incrementally and checking whether the current solution satisfies the required conditions. If a choice leads to an invalid solution, the algorithm “backtracks” by removing the last choice and tries another possibility.
 
-Read Mode ("r") -
-Opens file only for reading.
-Error occurs if file does not exist.
-file = open("sample.txt", "r")
-print(file.read())
-file.close()
+Backtracking is mainly used for problems where multiple combinations or arrangements are possible, such as puzzles, path finding, scheduling and combinational problems. It reduces unnecessary computations by stopping the exploration of invalid solutions early instead of checking every possible arrangement completely.
 
-Write Mode ("w") -
-Opens file for writing.
-Creates file if not present.
-Deletes existing content.
-file = open("sample.txt", "w")
-file.write("Hello Python")
-file.close()
+The technique works recursively. At every stage, the algorithm makes a choice, checks whether the choice is valid and continues further. If no valid solution can be formed from that choice, it returns to the previous step and explores another option. This process continues until a valid solution is found or all possibilities are exhausted.
 
-Append Mode ("a") -
-Adds data at the end of file.
-Existing data remains safe.
-file = open("sample.txt", "a")
-file.write("\nNew Line")
-file.close()
+Examples of problems solved using backtracking include:
 
-Read-Write Mode ("r+") -
-Allows both reading and writing.
-File must already exist.
-file = open("sample.txt", "r+")
-print(file.read())
-file.write(" Added Text")
-file.close()
+N-Queens Problem
+Sudoku Solver
+Rat in a Maze
+Graph Coloring
+Knight’s Tour Problem
 
 
 
-2. Reading Contents of a Text File in Python
-Python provides different methods to read data from files.
-Assume sample.txt contains:
-Hello
-Welcome
-Python
-read()
+2. What are the main steps involved in a Backtracking algorithm? Explain the process of making choices, checking constraints and backtracking when a solution is not feasible.
 
-Reads entire file content.
-file = open("sample.txt", "r")
-data = file.read()
-print(data)
-file.close()
+A backtracking algorithm generally follows a systematic sequence of steps to explore possible solutions.
 
-Output -
-Hello
-Welcome
-Python
-readline()
+Main Steps in Backtracking -
+1. Make a Choice
+The algorithm selects one possible option from the available choices.
+Example: placing a queen in a row of the chessboard.
+2. Check Constraints
+After making a choice, the algorithm verifies whether the current state satisfies the required conditions.
+If the constraints are satisfied, the algorithm proceeds further.
+If not, the current choice is rejected immediately.
+3. Move Forward Recursively
+The algorithm continues solving the remaining part of the problem using recursion.
+4. Backtrack if Needed
+If no valid solution is possible from the current path, the algorithm removes the last choice and returns to the previous step.
+It then tries another possible option.
+5. Repeat Until Solution is Found
+The process continues until a complete valid solution is obtained or all possibilities are checked.
 
-Reads one line at a time :
-file = open("sample.txt", "r")
-print(file.readline())
-print(file.readline())
-file.close()
-Output
-Hello
-Welcome
-readlines()
-
-Reads all lines and stores them in a list:
-file = open("sample.txt", "r")
-data = file.readlines()
-print(data)
-file.close()
-Output
-['Hello\n', 'Welcome\n', 'Python']
+Backtracking is efficient because it avoids exploring invalid paths completely. Instead of generating all possible solutions blindly, it eliminates wrong choices at an early stage.
 
 
 
-3. What is a CSV File? Explain Python csv Module
+3. Explain the N-Queens Problem. How does the backtracking technique help in finding a valid arrangement of queens on a chessboard?
 
-CSV stands for Comma Separated Values -
-Used to store tabular data.
-Each row is stored in a new line.
-Values are separated using commas.
+The N-Queens Problem is a famous problem in computer science and artificial intelligence. The objective is to place N queens on an N × N chessboard such that no two queens attack each other.
 
-Example CSV File -
-Name,Age,City
-Ram,21,Mysore
-Anu,20,Bangalore
+In chess, a queen can attack :
+Horizontally
+Vertically
+Diagonally
 
-Reading a CSV File -
-Python provides a built-in csv module.
+Therefore, the arrangement must ensure that:
 
-import csv
-file = open("data.csv", "r")
-reader = csv.reader(file)
-for row in reader:
-    print(row)
-file.close()
+No two queens are placed in the same row
+No two queens are placed in the same column
+No two queens are placed on the same diagonal
 
-Output -
-['Name', 'Age', 'City']
-['Ram', '21', 'Mysore']
-['Anu', '20', 'Bangalore']
+Backtracking helps solve this problem efficiently. The algorithm places queens row by row. For each row, it checks every column and determines whether placing a queen there is safe. If the position is valid, the algorithm places the queen and moves to the next row.
 
-Writing to a CSV File -
-import csv
-file = open("data.csv", "w", newline='')
-writer = csv.writer(file)
-writer.writerow(["Name", "Age", "City"])
-writer.writerow(["Ram", 21, "Mysore"])
-file.close()
+If the algorithm reaches a situation where no safe position is available, it backtracks by removing the previously placed queen and tries another column. This continues until all queens are successfully placed.
+
+For example, in the 4-Queens Problem, the algorithm explores different arrangements until it finds a valid configuration where all four queens are safe from each other.
+
+Backtracking is suitable for the N-Queens Problem because it systematically explores possible arrangements while eliminating invalid configurations early.
 
 
 
-4. What is JSON? Explain json.dump() and json.load()
+4. What is a Trie Data Structure? Describe the structure of a Trie and explain how it stores strings efficiently.
 
-JSON stands for JavaScript Object Notation.
-Lightweight data exchange format.
-Commonly used in APIs and web applications.
-Easy for humans and machines to read.
+A Trie is a special tree-based data structure used for storing and searching strings efficiently. It is also called a Prefix Tree because it stores strings based on their prefixes.
 
-Example JSON -
-{
-  "name": "Ram",
-  "age": 21
-}
+In a Trie:
 
-json.dump() -
-Used to write Python objects into a JSON file.
+Each node represents a character.
+The path from the root node to a node forms a prefix or a complete word.
+A special marker is used to indicate the end of a word.
 
-import json
-data = {"name": "Ram", "age": 21}
-file = open("data.json", "w")
-json.dump(data, file)
-file.close()
+Unlike other data structures, a Trie stores common prefixes only once. This saves memory and improves searching speed when many strings share similar prefixes.
 
-json.load() -
-Used to read JSON data from a file into a Python object.
+For example, consider the words:
+CAT
+CAR
+CARE
 
-import json
-file = open("data.json", "r")
-data = json.load(file)
-print(data)
-file.close()
+All these words share the prefix “CA”. In a Trie, the letters “C” and “A” are stored only once, and separate branches are created afterward.
 
-Output -
-{'name': 'Ram', 'age': 21}
+Structure of a Trie:
+
+Root Node → starting point
+Child Nodes → represent characters
+End-of-word flag → indicates completion of a valid word
+
+Tries are highly efficient for dictionary-based operations and prefix searching.
 
 
 
-5. What is a Module in Python?
-A module is a Python file containing functions, variables, or classes that can be reused in another program.
+5. Explain the basic operations of a Trie. Discuss the insertion, search and prefix search operations with suitable examples.
 
-Advantages of Modules -
-Code reusability
-Better program organization
-Easy maintenance
-Reduces code duplication
+A Trie mainly supports three basic operations:
 
-Example of User-Defined Module -
-mymodule.py
-def greet():
-    print("Hello")
+1. Insertion
+Insertion adds a word into the Trie character by character.
 
-Main Program -
-import mymodule
-mymodule.greet()
+Example:
+Insert the word “CAT”
+Start from the root node
+Create nodes for C → A → T
+Mark T as the end of the word
 
-Built-in Modules in Python -
-Module	              Purpose
-math	            Mathematical operations
-random	          Random number generation
-os	              Operating system operations
-datetime	        Date and time handling
-csv	              CSV file handling
+If another word such as “CAR” is inserted, the nodes C and A are reused, and only R is added.
 
-Example Using math Module -
-import math
-print(math.sqrt(25))
+2. Search Operation
+The search operation checks whether a complete word exists in the Trie.
 
-Output -
-5.0
+Example:
+Searching for “CAT”
+Traverse through C → A → T
+If all characters are found and the end-of-word marker exists, the word is present.
+
+If the word is “CA”, it is not considered valid unless the end marker exists.
+
+3. Prefix Search
+Prefix search checks whether any word in the Trie starts with a given prefix.
+
+Example:
+Searching prefix “CA”
+Traverse C → A
+Since the path exists, the prefix is valid.
+
+This operation is very fast and is commonly used in autocomplete systems.
+The time complexity for insertion, search and prefix search is generally:
+
+O(L) ,where L is the length of the word.
+
+O(L)
 
 
 
-6. Difference Between Module and Package in Python
-Module	                          Package
-Single Python file	          Collection of modules
-Contains functions/classes	  Contains multiple modules
-Smaller unit	                Larger project structure
-Example: math.py	            Example: numpy
-Package Organization
+6. What are the advantages and applications of Trie Data Structures? List and explain any four real-world applications of Tries.
 
-Example structure:
+Trie data structures provide several advantages:
+Fast searching and insertion
+Efficient prefix matching
+Better performance for dictionary operations
+Avoids duplication of common prefixes
 
-mypackage/
-│
-├── __init__.py
-├── module1.py
-├── module2.py
+Real-World Applications of Tries -
+1. Autocomplete Systems
+Search engines and mobile keyboards use Tries to suggest words based on user input. As the user types a prefix, the Trie quickly retrieves matching words.
 
-Role of __init__.py -
-Makes the directory a Python package.
-Initializes the package.
-Can contain package-level code.
+2. Spell Checkers
+Spell-checking applications store dictionary words in a Trie and compare typed words efficiently to detect mistakes and suggest corrections.
 
-Example -
-module1.py
-def add(a, b):
-    return a + b
+3. IP Routing
+Network routers use Trie-like structures for longest prefix matching in IP address routing tables.
 
-main.py
-from mypackage import module1
-print(module1.add(2,3))
+4. Dictionary Applications
+Online dictionaries use Tries for fast word lookup, meaning search and prefix-based suggestions.
 
-Output -
-5
+Additional applications include:
+Search engines
+Contact lists
+DNA sequence matching
+Boggle and word games
+
+
+
+7. How can Backtracking and Trie be combined to solve problems? Explain with an example such as Word Search, Boggle Game or Autocomplete Systems.
+
+Backtracking and Trie can be combined to solve word-related search problems efficiently. The Trie helps in storing and searching words quickly, while backtracking explores different possible paths.
+
+One common example is the Boggle Game or Word Search Problem.
+In these problems:
+A board of letters is given.
+The goal is to form valid words by moving through adjacent cells.
+
+How the Combination Works -
+*All valid words are first stored in a Trie.
+*The algorithm starts exploring the board using backtracking.
+*While moving through cells, characters are checked against the Trie.
+*If the current sequence does not exist as a prefix in the Trie, the search stops immediately.
+*If a complete word is found, it is added to the result.
+
+This combination is efficient because : 
+Backtracking explores different paths.
+Trie prevents unnecessary searches by quickly rejecting invalid prefixes.
+
+For example, if the Trie contains:
+CAT
+CAR
+CARE
+and the board currently forms “CZ”, the algorithm immediately stops because “CZ” is not a valid prefix in the Trie.
+
+Thus, combining Backtracking and Trie improves both speed and memory efficiency in complex word-search applications.
