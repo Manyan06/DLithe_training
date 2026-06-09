@@ -8,6 +8,8 @@ QUESTIONS -
 6. How can missing values affect data analysis? Discuss different methods used in Pandas to handle missing values, including removing and replacing them.
 7. Explain the importance of duplicate data detection and removal. How do duplicate records impact data analysis, and what techniques can be used to identify and remove them in Pandas?
 
+
+
 ANSWERS :
 1. What is a NumPy array? Explain the advantages of NumPy arrays over Python lists in terms of memory usage, performance and mathematical operations.
 
