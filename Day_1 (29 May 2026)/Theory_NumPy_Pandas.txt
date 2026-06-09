@@ -1,0 +1,250 @@
+QUESTIONS -
+
+1. What is a NumPy array? Explain the advantages of NumPy arrays over Python lists in terms of memory usage, performance and mathematical operations.
+2. Describe the structure of a Pandas DataFrame. How is a DataFrame different from a NumPy array and What are its main components?
+3. What is filtering in Pandas? Explain how filtering is used to extract specific rows from a DataFrame based on one or more conditions.
+4. What is sorting in a DataFrame? Discuss the difference between sorting data by a single column and sorting by multiple columns. Why is sorting important in data analysis?
+5. What is data cleaning and Why is it necessary? Explain the common issues found in raw datasets and how data cleaning improves data quality.
+6. How can missing values affect data analysis? Discuss different methods used in Pandas to handle missing values, including removing and replacing them.
+7. Explain the importance of duplicate data detection and removal. How do duplicate records impact data analysis, and what techniques can be used to identify and remove them in Pandas?
+
+ANSWERS :
+1. What is a NumPy array? Explain the advantages of NumPy arrays over Python lists in terms of memory usage, performance and mathematical operations.
+
+A NumPy array is a powerful data structure provided by the Python library NumPy used for storing and manipulating large amounts of numerical data efficiently. It stores elements of the same data type in a multidimensional structure such as 1D, 2D, or 3D arrays.
+
+Advantages of NumPy Arrays over Python Lists: 
+
+1. Memory Efficiency
+NumPy arrays consume less memory compared to Python lists.
+Lists store references to objects, while NumPy arrays store data in contiguous memory locations.
+This reduces memory overhead and improves efficiency.
+
+2. Faster Performance
+NumPy arrays are optimized using low-level implementations written in C.
+Mathematical and looping operations execute much faster than normal Python lists.
+Suitable for large datasets and scientific computing.
+
+3. Mathematical Operations
+NumPy supports vectorized operations.
+Mathematical calculations can be performed directly on arrays without using loops.
+
+Example:
+import numpy as np
+a = np.array([1, 2, 3])
+print(a + 2)
+
+Output:
+[3 4 5]
+
+4. Multidimensional Support
+Supports matrices and multidimensional arrays.
+Useful in machine learning, image processing, and data analysis.
+
+
+
+2. Describe the structure of a Pandas DataFrame. How is a DataFrame different from a NumPy array and what are its main components?
+
+A DataFrame is a two-dimensional labeled data structure provided by Pandas. It organizes data in rows and columns similar to an Excel table or database table.
+
+Main Components of a DataFrame -
+Rows → Represent records or observations.
+Columns → Represent variables or attributes.
+Index → Unique labels assigned to rows.
+Data Values → Actual information stored inside the table.
+
+Example:
+
+import pandas as pd
+data = {
+    "Name": ["Ram", "Sam"],
+    "Age": [20, 22]
+}
+df = pd.DataFrame(data)
+print(df)
+
+Difference Between DataFrame and NumPy Array
+
+Feature	    Pandas DataFrame	                NumPy Array
+
+Data Type	  Can store different data types	  Stores same data type
+Labels	    Has row and column labels	        No labels
+Structure	  Tabular	                          Matrix-like
+Usage	      Data analysis and handling	      Numerical computation
+
+Importance of DataFrames -
+-Easy data manipulation.
+-Supports filtering, sorting, grouping, and cleaning.
+-Widely used in data science and analytics.
+
+
+
+3. What is filtering in Pandas? Explain how filtering is used to extract specific rows from a DataFrame based on one or more conditions.
+
+Filtering in Pandas means selecting specific rows from a DataFrame that satisfy certain conditions. It helps users extract only the required data for analysis.
+
+Why Filtering is Important
+-Removes unwanted records.
+-Focuses only on relevant information.
+-Simplifies analysis and reporting.
+
+Filtering Using One Condition -
+
+Example:
+import pandas as pd
+df = pd.DataFrame({
+    "Name": ["A", "B", "C"],
+    "Marks": [80, 45, 90]
+})
+print(df[df["Marks"] > 50])
+
+This displays students with marks greater than 50.
+
+Filtering Using Multiple Conditions
+
+Example:
+print(df[(df["Marks"] > 50) & (df["Marks"] < 90)])
+
+Common Operators Used -
+> Greater than
+< Less than
+== Equal to
+& AND condition
+| OR condition
+
+Filtering is commonly used in real-world applications such as student result analysis, sales reports, and customer data analysis.
+
+
+
+4. What is sorting in a DataFrame? Discuss the difference between sorting data by a single column and sorting by multiple columns. Why is sorting important in data analysis?
+
+Sorting in a DataFrame means arranging data in ascending or descending order based on column values. In Pandas, sorting is performed using the sort_values() function.
+
+Sorting by a Single Column -
+Example:
+df.sort_values(by="Marks")
+This sorts the DataFrame using only the Marks column.
+
+Sorting by Multiple Columns -
+Example:
+df.sort_values(by=["Marks", "Age"])
+This first sorts by Marks and then sorts rows with equal marks using Age.
+
+Difference Between Single and Multiple Column Sorting -
+
+Single Column Sorting	          Multiple Column Sorting
+Uses one column only	          Uses more than one column
+Simpler sorting	                More detailed sorting
+Faster for small tasks	        Better for complex datasets
+
+Importance of Sorting -
+-Makes data easier to understand.
+-Helps identify highest and lowest values.
+-Improves reporting and visualization.
+-Useful in ranking and comparison tasks.
+
+Example applications:
+-Sorting students by marks.
+-Sorting products by price.
+-Sorting employees by salary and experience.
+
+
+
+5. What is data cleaning and why is it necessary? Explain the common issues found in raw datasets and how data cleaning improves data quality.
+
+Data cleaning is the process of detecting, correcting or removing incorrect, incomplete, duplicate or irrelevant data from a dataset. It is an important step before performing data analysis.
+
+Why Data Cleaning is Necessary -
+-Improves accuracy of analysis.
+-Prevents incorrect results.
+-Enhances reliability of datasets.
+-Increases overall data quality.
+
+Common Issues in Raw Data -
+Missing values
+Duplicate records
+Incorrect formats
+Typographical errors
+Inconsistent values
+Outliers and invalid entries
+
+How Data Cleaning Improves Data Quality -
+*Removes errors and inconsistencies.
+*Makes data standardized and organized.
+*Improves machine learning model performance.
+*Produces accurate reports and predictions.\
+
+Common Data Cleaning Techniques -
+*Removing duplicates
+*Filling missing values
+*Correcting data formats
+*Replacing incorrect values
+*Standardizing text data
+
+Data cleaning is widely used in business analytics, healthcare systems, banking and research projects.
+
+
+
+6. How can missing values affect data analysis? Discuss different methods used in Pandas to handle missing values, including removing and replacing them.
+
+Missing values occur when some data entries are empty or unavailable in a dataset. In Pandas, missing values are usually represented as NaN.
+
+Effects of Missing Values -
+*Reduces accuracy of analysis.
+*Produces misleading results.
+*Causes errors in machine learning algorithms.
+*Affects statistical calculations.
+
+Methods to Handle Missing Values in Pandas
+1. Detecting Missing Values
+df.isnull()
+
+2. Removing Missing Values
+Using dropna():
+df.dropna()
+Removes rows containing missing values.
+
+3. Replacing Missing Values
+Using fillna():
+df.fillna(0)
+Replaces missing values with 0.
+
+4. Replacing with Mean or Median
+df["Marks"].fillna(df["Marks"].mean())
+Useful for numerical datasets 
+
+Importance of Handling Missing Values -
+Improves dataset completeness.
+Helps generate accurate predictions.
+Ensures better decision-making.
+
+
+
+7. Explain the importance of duplicate data detection and removal. How do duplicate records impact data analysis, and what techniques can be used to identify and remove them in Pandas?
+
+Duplicate data means repeated records appearing multiple times in a dataset. Detecting and removing duplicates is important for maintaining data accuracy and consistency.
+
+Impact of Duplicate Records -
+*Produces incorrect analysis results.
+*Increases dataset size unnecessarily.
+*Misleads statistical calculations.
+*Affects machine learning model performance.
+
+Example:
+Duplicate customer records may lead to incorrect sales reports.
+Detecting Duplicate Records in Pandas
+
+Using duplicated():
+df.duplicated()
+Returns True for duplicate rows.
+
+Removing Duplicate Records :
+Using drop_duplicates():
+df.drop_duplicates()
+Removes repeated rows from the dataset.
+
+Benefits of Removing Duplicates -
+-Improves data quality.
+-Reduces storage space.
+-Enhances accuracy of reports.
+-Makes datasets cleaner and more reliable.
