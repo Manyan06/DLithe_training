@@ -1,0 +1,173 @@
+QUESTIONS -
+
+1. What is Matplotlib? Explain the purpose of the Matplotlib library in Python and discuss its importance in data visualization.
+2. Differentiate between Line Chart and Bar Chart.Describe the situations in which a line chart is preferred over a bar chart and provide suitable examples.
+3. What is Data Science? Define Data Science and explain the major stages involved in the Data Science lifecycle.
+4. Why is Data Visualization Important in Data Science? Discuss how charts and graphs help in understanding, analyzing and communicating data effectively.
+5. What is Scikit-Learn? Explain the role of the Scikit-Learn library in Machine Learning and list some of its key features.
+6. What are Features and Target Variables in Machine Learning? Define features (independent variables) and target variables (dependent variables) with an example dataset.
+
+
+
+ANSWERS -
+
+1. What is Matplotlib?
+
+Matplotlib is a popular Python library used for creating graphs, charts and other visual representations of data. It helps users convert numerical data into visual formats that are easy to understand and analyze. It is widely used in Data Science, Machine Learning and data analysis projects.
+
+Matplotlib provides different types of plots such as line charts, bar charts, pie charts, histograms and scatter plots. It works well with libraries like NumPy and Pandas, making it very useful for scientific and statistical analysis.
+
+The importance of Matplotlib in data visualization is that it helps users identify trends, patterns, relationships and outliers in data quickly. Visual representation makes complex data easier to interpret and communicate effectively.
+
+Key Features of Matplotlib:
+-Easy to use and flexible
+-Supports multiple chart types
+-Customizable graphs with titles, label and colors
+-Works with NumPy and Pandas
+Used for data analysis and reporting
+
+Example:
+A company can use a line chart created with Matplotlib to display monthly sales growth over a year.
+
+
+
+2. Differentiate between Line Chart and Bar Chart
+
+A line chart and a bar chart are both used for data visualization, but they serve different purposes.
+
+A line chart is mainly used to show changes or trends over a continuous period of time. The data points are connected using lines, which makes it easy to observe increases or decreases. It is preferred when analyzing time-series data such as temperature changes, stock prices or monthly sales.
+
+A bar chart is used to compare quantities among different categories. It uses rectangular bars where the height or length represents the value. It is useful for comparing separate groups like student marks, product sales, or population of cities.
+
+Differences Between Line Chart and Bar Chart:
+Line Chart	                              Bar Chart
+Shows trends over time	            Shows comparison between categories
+Data points are connected by lines	Data is represented using bars
+Best for continuous data	          Best for categorical data
+Helps identify growth or decline	  Helps compare values easily
+
+Situations where Line Chart is Preferred:
+-Showing monthly rainfall changes
+-Tracking stock market prices
+-Monitoring temperature over time
+
+Situations where Bar Chart is Preferred:
+-Comparing marks of students
+-Comparing sales of different products
+-Comparing population of different countries
+
+
+3. What is Data Science?
+
+Data Science is the field that involves collecting, processing, analyzing and interpreting data to extract useful information and support decision-making. It combines statistics, programming, mathematics and machine learning to solve real-world problems.
+
+Data Science helps organizations understand patterns and trends from large amounts of data. It is used in healthcare, banking, e-commerce, education, social media and many other industries.
+
+The Data Science lifecycle consists of several stages that help transform raw data into meaningful insights.
+
+Major Stages in the Data Science Lifecycle:
+*Data Collection- Gathering data from databases, websites, sensors, or surveys.
+*Data Cleaning -Removing errors, duplicates and missing values from data.
+*Data Exploration and Analysis -Understanding patterns and relationships using statistics and visualization.
+*Model Building -Applying machine learning algorithms to make predictions or classifications.
+*Model Evaluation -Testing the accuracy and performance of the model.
+*Deployment -Using the model in real-world applications.
+*Monitoring and Improvement-Updating and improving the model regularly.
+
+Example:
+Netflix uses Data Science to recommend movies based on user preferences and watching history.
+
+
+
+4. Why is Data Visualization Important in Data Science?
+
+Data Visualization is the graphical representation of data using charts, graphs and plots. It is important in Data Science because it helps users understand large and complex datasets easily.
+
+Visual representation makes it easier to identify patterns, trends, relationships and outliers that may not be visible in raw data tables. It also improves communication of insights to decision-makers and non-technical users.
+
+Charts and graphs help analysts interpret information quickly and make better business decisions. Good visualizations simplify complicated information and save time during analysis.
+
+Importance of Data Visualization:
+-Makes complex data easy to understand
+-Helps identify trends and patterns
+-Detects errors and outliers
+-Improves decision-making
+-Enhances communication of results
+-Saves time in analysis
+
+Common Visualization Tools:
+Line Charts
+Bar Charts
+Pie Charts
+Histograms
+Scatter Plots
+
+Example:
+A sales dashboard with graphs can help a company quickly understand which product has the highest sales.
+
+
+
+5. What is Scikit-Learn?
+
+Scikit-Learn is an open-source Python library used for Machine Learning. It provides simple and efficient tools for data analysis, classification, regression, clustering and prediction tasks.
+
+It is built on top of NumPy, SciPy and Matplotlib. Scikit-Learn is widely used because it is easy to learn and provides many ready-made machine learning algorithms.
+
+The library helps developers build and test machine learning models without writing complex mathematical code from scratch.
+
+Role of Scikit-Learn in Machine Learning:
+-Building machine learning models
+-Training and testing algorithms
+=Data preprocessing
+-Feature selection
+-Model evaluation
+
+Key Features of Scikit-Learn:
+-Simple and user-friendly API
+-Supports classification and regression
+-Provides clustering algorithms
+-Includes tools for model evaluation
+-Supports data preprocessing and feature extraction
+-Works efficiently with NumPy and Pandas
+
+Common Algorithms in Scikit-Learn:
+Linear Regression
+Decision Trees
+K-Nearest Neighbors (KNN)
+Support Vector Machines (SVM)
+K-Means Clustering
+
+Example:
+A spam email detection system can be developed using Scikit-Learn classification algorithms.
+
+
+
+6. What are Features and Target Variables in Machine Learning?
+
+In Machine Learning, features and target variables are the main components of a dataset.
+
+Features are the input variables or independent variables used to make predictions. They contain information that helps the machine learning model learn patterns.
+
+The target variable is the output variable or dependent variable that the model tries to predict.
+
+The machine learning algorithm studies the relationship between features and the target variable during training.
+
+Example Dataset: House Price Prediction
+Size of House	Number of Rooms	Location Score	Price
+1200 sq.ft	2	7	₹40 Lakhs
+1800 sq.ft	3	9	₹65 Lakhs
+
+Explanation:
+Features (Independent Variables):
+Size of House
+Number of Rooms
+Location Score
+Target Variable (Dependent Variable):
+Price of the House
+
+The model uses the features to predict the target variable.
+
+Importance:
+Features help the model learn patterns
+The target variable provides the expected output
+Correct feature selection improves model accuracy
