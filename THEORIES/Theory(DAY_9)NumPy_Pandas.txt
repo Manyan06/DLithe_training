@@ -1,11 +1,17 @@
 QUESTIONS -
 
 1. What is a NumPy array? Explain the advantages of NumPy arrays over Python lists in terms of memory usage, performance and mathematical operations.
+
 2. Describe the structure of a Pandas DataFrame. How is a DataFrame different from a NumPy array and What are its main components?
+
 3. What is filtering in Pandas? Explain how filtering is used to extract specific rows from a DataFrame based on one or more conditions.
+
 4. What is sorting in a DataFrame? Discuss the difference between sorting data by a single column and sorting by multiple columns. Why is sorting important in data analysis?
+
 5. What is data cleaning and Why is it necessary? Explain the common issues found in raw datasets and how data cleaning improves data quality.
+
 6. How can missing values affect data analysis? Discuss different methods used in Pandas to handle missing values, including removing and replacing them.
+
 7. Explain the importance of duplicate data detection and removal. How do duplicate records impact data analysis, and what techniques can be used to identify and remove them in Pandas?
 
 

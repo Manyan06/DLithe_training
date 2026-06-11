@@ -1,10 +1,15 @@
 QUESTIONS - 
 
 1. What is the difference between opening a file in read mode("r),write mode("w), append mode("a"), and read-write mode("r+") in Python? Explain with examples.
+
 2. How can you read the contents of a text file in Python? Explain the use of the read(), readline() and readlines() methods.
+
 3. What is a CSV file? Describe how Python's csv module can be used to read data from and write data to a CSV file.
+
 4. What is JSON and why is it commonly used for data exchange? Explain the purpose of the json.dump() and json.load() methods.
+
 5. What is a module in Python? Explain how modules help in code reusability and provide examples of built-in modules.
+
 6. Differentiate between a module and a package in Python. How is a package organized, and what is the role of the __init__.py file?
 
 

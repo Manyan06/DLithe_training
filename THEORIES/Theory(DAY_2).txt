@@ -1,3 +1,27 @@
+QUESTIONS-
+
+1. Variables and Memory Management
+Explain the difference between mutable and immutable data types in Python. How does Python's memory management handle variable assignment for each?
+
+2. Data Types
+Compare and contrast the following Python data types: list, tuple, set, and dictionary. Discuss their characteristics, use cases and performance considerations.
+
+3. Type Conversion
+Differentiate between implicit and explicit type conversion in Python. Provide examples where implicit type conversion may lead to unexpected results.
+
+4. Operators
+Explain the difference between the '==' operator and the 'is' operator in Python. In which situations can using 'is' instead of '==' produce incorrect results?
+
+5. Strings
+Python strings are immutable. What are the advantages of string immutability? How does it affect memory optimization and program security?
+
+6. Built-in Functions
+Discuss the working of the built-in functions map(), filter() and reduce(). Compare them with list comprehensions in terms of readability, performance and practical usage.
+
+
+
+ANSWERS -
+
 1. Variables and Memory Management
 Difference between Mutable and Immutable Data Types in Python
 

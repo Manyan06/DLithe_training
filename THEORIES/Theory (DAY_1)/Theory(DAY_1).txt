@@ -1,3 +1,19 @@
+QUESTIONS-
+
+1. What are the advantages of Python over other programming languages?
+
+2. Explain the difference between Python 2 and Python 3.
+
+3. What is the purpose of print() and input() functions in Python? 
+
+4. Explain the use of help() and dir() functions in the Python. 
+
+5. What is an IDE? Name any two Python IDEs and explain their importance.
+
+
+
+ANSWERS -
+
 1. What are the advantages of Python over other programming languages?   
 
 *Simple and easy-to-read syntax 
@@ -8,7 +24,7 @@
 *Faster development and fewer lines of code
 
 
-2. Explain the difference between Python 2 and Python 
+2. Explain the difference between Python 2 and Python 3
 
 Feature	                              Python 2                            	Python 3
 
@@ -21,11 +37,11 @@ Leaked Variables	    Loop variables leak into global scope	            Loop vari
 
 
 
-3. What is the purpose of print() and dir() functions in Python? 
+3. What is the purpose of print() and input() functions in Python? 
 
 The print() function is used to display output on the screen. It helps programmers show messages, variables, results and program outputs to the user.
 
-The dir() function is used to display the list of attributes, methods and functions available in an object or module. It helps programmers explore available features in Python.
+The input() function in Python captures data entered by the user and returns it as a string, while the print() function displays data on the console.
 
 
 

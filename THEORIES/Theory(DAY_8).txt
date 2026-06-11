@@ -1,11 +1,17 @@
 QUESTIONS -
 
 1. What is Backtracking? Explain the concept of backtracking and describe how it is used to solve complex problems.
+
 2. What are the main steps involved in a Backtracking algorithm? Explain the process of making choices, checking constraints and backtracking when a solution is not feasible.
+
 3. Explain the N-Queens Problem. How does the backtracking technique help in finding a valid arrangement of queens on a chessboard?
+
 4. What is a Trie Data Structure? Describe the structure of a Trie and explain how it stores strings efficiently.
+
 5. Explain the basic operations of a Trie. Discuss the insertion, search and prefix search operations with suitable examples.
+
 6. What are the advantages and applications of Trie Data Structures? List and explain any four real-world applications of Tries.
+
 7. How can Backtracking and Trie be combined to solve problems? Explain with an example such as Word Search, Boggle Game or Autocomplete Systems.
 
 ANSWERS -

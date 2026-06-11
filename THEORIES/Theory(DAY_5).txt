@@ -1,3 +1,27 @@
+QUESTIONS-
+
+1. Classes and Objects
+Explain the difference between a class and an object in Python. How are objects created from a class? Provide a real-world example.
+
+2. Constructors (__init__)
+What is a constructor in Python? Explain the purpose of the __init__() method and how it is used to initialize object attributes.
+
+3. Inheritance
+Define inheritance in Python. What are the advantages of inheritance and how does it promote code reusability?
+
+4. Method Overriding
+What is method overriding? Explain how a child class can modify the behavior of a method inherited from its parent class.
+
+5. Encapsulation
+Explain the concept of encapsulation in Object-Oriented Programming. How does Python implement data hiding using public, protected, and private members?
+
+6. Polymorphism
+What is polymorphism in Python? Describe how the same method name can perform different actions depending on the object that calls it.
+
+
+
+ANSWERS -
+
 1. Classes and Objects
 
 A class is a blueprint or template used to create objects. It defines the attributes (data) and methods (functions) that objects will have.

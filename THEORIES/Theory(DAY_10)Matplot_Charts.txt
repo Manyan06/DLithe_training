@@ -1,10 +1,15 @@
 QUESTIONS -
 
 1. What is Matplotlib? Explain the purpose of the Matplotlib library in Python and discuss its importance in data visualization.
+
 2. Differentiate between Line Chart and Bar Chart.Describe the situations in which a line chart is preferred over a bar chart and provide suitable examples.
+
 3. What is Data Science? Define Data Science and explain the major stages involved in the Data Science lifecycle.
+
 4. Why is Data Visualization Important in Data Science? Discuss how charts and graphs help in understanding, analyzing and communicating data effectively.
+
 5. What is Scikit-Learn? Explain the role of the Scikit-Learn library in Machine Learning and list some of its key features.
+
 6. What are Features and Target Variables in Machine Learning? Define features (independent variables) and target variables (dependent variables) with an example dataset.
 
 
