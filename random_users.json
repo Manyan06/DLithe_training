@@ -1,0 +1,290 @@
+{
+    "results": [
+        {
+            "gender": "male",
+            "name": {
+                "title": "Mr",
+                "first": "Adelbert",
+                "last": "Hausner"
+            },
+            "location": {
+                "street": {
+                    "number": 40,
+                    "name": "Uhlandstra\u00dfe"
+                },
+                "city": "Jerichower Land",
+                "state": "Hamburg",
+                "country": "Germany",
+                "postcode": 49355,
+                "coordinates": {
+                    "latitude": "-54.4229",
+                    "longitude": "-136.1344"
+                },
+                "timezone": {
+                    "offset": "-3:30",
+                    "description": "Newfoundland"
+                }
+            },
+            "email": "adelbert.hausner@example.com",
+            "login": {
+                "uuid": "0450f656-d9bf-4894-a36e-326e32e64899",
+                "username": "greentiger294",
+                "password": "clarinet",
+                "salt": "1KR7HKqi",
+                "md5": "7729d396d9f91474b4d2c0a99b1b6a1b",
+                "sha1": "919a7d885acd83436d16a482497724f55135728f",
+                "sha256": "c9bed827f5daa9f55afa9533f4850049ae7ee8e97a64fe12bf9a91721f0f008b"
+            },
+            "dob": {
+                "date": "1951-10-28T14:53:07.347Z",
+                "age": 74
+            },
+            "registered": {
+                "date": "2010-08-11T11:21:01.942Z",
+                "age": 15
+            },
+            "phone": "0219-4255516",
+            "cell": "0175-1330433",
+            "id": {
+                "name": "SVNR",
+                "value": "21 281051 H 391"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/93.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/93.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/93.jpg"
+            },
+            "nat": "DE"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "Mrs",
+                "first": "Zekiye",
+                "last": "Van Engen"
+            },
+            "location": {
+                "street": {
+                    "number": 6281,
+                    "name": "Kamphoefweg"
+                },
+                "city": "Lhee",
+                "state": "Zuid-Holland",
+                "country": "Netherlands",
+                "postcode": "5217 US",
+                "coordinates": {
+                    "latitude": "-69.3308",
+                    "longitude": "60.3536"
+                },
+                "timezone": {
+                    "offset": "+5:00",
+                    "description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
+                }
+            },
+            "email": "zekiye.vanengen@example.com",
+            "login": {
+                "uuid": "82560645-3c2b-4cfd-aaad-7f6e8506ae9b",
+                "username": "goldenmeercat622",
+                "password": "reflex",
+                "salt": "4IvdxN6L",
+                "md5": "b39cabeb528b1d84745ab1c5c3ec0df8",
+                "sha1": "8cb7dc8567149e14ff0134b8b7babf255961792e",
+                "sha256": "9246c9a8288e5947d408f25ba7ad7bd153fb3027cdeb849be07b79e5c7eaac2f"
+            },
+            "dob": {
+                "date": "1950-12-07T04:13:40.297Z",
+                "age": 75
+            },
+            "registered": {
+                "date": "2011-01-07T08:20:44.928Z",
+                "age": 15
+            },
+            "phone": "(037) 6592758",
+            "cell": "(06) 21914678",
+            "id": {
+                "name": "BSN",
+                "value": "67341706"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/14.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/14.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/14.jpg"
+            },
+            "nat": "NL"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "Miss",
+                "first": "Stacy",
+                "last": "Hughes"
+            },
+            "location": {
+                "street": {
+                    "number": 243,
+                    "name": "N Stelling Rd"
+                },
+                "city": "Cairns",
+                "state": "Northern Territory",
+                "country": "Australia",
+                "postcode": 816,
+                "coordinates": {
+                    "latitude": "-29.5934",
+                    "longitude": "27.9187"
+                },
+                "timezone": {
+                    "offset": "-9:00",
+                    "description": "Alaska"
+                }
+            },
+            "email": "stacy.hughes@example.com",
+            "login": {
+                "uuid": "91625ba8-e3c8-4ebf-a4dd-2e1643e269be",
+                "username": "ticklishkoala614",
+                "password": "keenan",
+                "salt": "Q8Oez6Y1",
+                "md5": "63de42b8627c23b4f575202660f0cec5",
+                "sha1": "4185195845252ddaa9431a34c7ddaf8d404a5c92",
+                "sha256": "9fd7f524be466cc3a11134fd0b7cac60369b79404d229f16a535a66dfbba9360"
+            },
+            "dob": {
+                "date": "1946-05-25T20:53:27.465Z",
+                "age": 80
+            },
+            "registered": {
+                "date": "2017-11-26T03:06:24.138Z",
+                "age": 8
+            },
+            "phone": "05-8911-0572",
+            "cell": "0484-424-205",
+            "id": {
+                "name": "TFN",
+                "value": "145322531"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/31.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/31.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/31.jpg"
+            },
+            "nat": "AU"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "Ms",
+                "first": "Emilia",
+                "last": "Tornes"
+            },
+            "location": {
+                "street": {
+                    "number": 9133,
+                    "name": "Halvor Torgersens vei"
+                },
+                "city": "Hogsetfeltet",
+                "state": "Nord-Tr\u00f8ndelag",
+                "country": "Norway",
+                "postcode": "8013",
+                "coordinates": {
+                    "latitude": "29.2834",
+                    "longitude": "77.9330"
+                },
+                "timezone": {
+                    "offset": "-10:00",
+                    "description": "Hawaii"
+                }
+            },
+            "email": "emilia.tornes@example.com",
+            "login": {
+                "uuid": "672c0a83-3bcb-40ee-b110-844bbfa16ecd",
+                "username": "yellowfish406",
+                "password": "becker",
+                "salt": "KUhxcI2H",
+                "md5": "77a747e125dd6f367a3ea00fd03849fd",
+                "sha1": "3a9a2333730247e185af942f421a0af7ee601677",
+                "sha256": "2a0e94f2df1dafd1a058bc1fbb7ab787829022d1a1290e9ac8c8644323f9c825"
+            },
+            "dob": {
+                "date": "1997-02-26T22:07:15.239Z",
+                "age": 29
+            },
+            "registered": {
+                "date": "2016-12-14T08:29:08.443Z",
+                "age": 9
+            },
+            "phone": "31448405",
+            "cell": "91249005",
+            "id": {
+                "name": "FN",
+                "value": "26029723604"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/44.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/44.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/44.jpg"
+            },
+            "nat": "NO"
+        },
+        {
+            "gender": "female",
+            "name": {
+                "title": "Miss",
+                "first": "Yasemin",
+                "last": "Y\u0131lmazer"
+            },
+            "location": {
+                "street": {
+                    "number": 1296,
+                    "name": "Fatih Sultan Mehmet Cd"
+                },
+                "city": "Hakk\u00e2ri",
+                "state": "Bal\u0131kesir",
+                "country": "Turkey",
+                "postcode": 92793,
+                "coordinates": {
+                    "latitude": "0.9732",
+                    "longitude": "122.1890"
+                },
+                "timezone": {
+                    "offset": "-11:00",
+                    "description": "Midway Island, Samoa"
+                }
+            },
+            "email": "yasemin.yilmazer@example.com",
+            "login": {
+                "uuid": "790c58de-1108-4b3c-b737-418169643852",
+                "username": "crazywolf683",
+                "password": "dawson",
+                "salt": "w9GvWmUl",
+                "md5": "0c51ed55abe201444ad501c67478ef07",
+                "sha1": "52d45f3b2cbc990b1c013af2b13c09c441bc7fad",
+                "sha256": "9e578b3e1f0c577fc65ee8d41b31714de86944f1573acc8f75336fd1484f6e65"
+            },
+            "dob": {
+                "date": "1998-02-13T17:47:12.612Z",
+                "age": 28
+            },
+            "registered": {
+                "date": "2012-12-15T00:50:49.501Z",
+                "age": 13
+            },
+            "phone": "(757)-702-3389",
+            "cell": "(524)-190-4214",
+            "id": {
+                "name": "",
+                "value": null
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/27.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/27.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/27.jpg"
+            },
+            "nat": "TR"
+        }
+    ],
+    "info": {
+        "seed": "fd79a4aa5772faee",
+        "results": 5,
+        "page": 1,
+        "version": "1.4"
+    }
+}

@@ -1,0 +1,12 @@
+#GET Request
+response = requests.get(url)
+
+#POST Request
+data = {'name': 'Manya','age':20}
+response = requests.post(url, json=data)
+
+#PUT Request
+response = requests.put(url,json=data)
+
+#DELETE Request
+response = requests.delete(url)
